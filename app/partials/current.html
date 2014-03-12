@@ -1,0 +1,18 @@
+<ng-include src="'app/partials/header.html'"></ng-include>
+<ul id="header-options">
+    <li toggle="toggle.display"><span class="glyphicon glyphicon-plus"></span>New Task</li>
+    <li><span class="glyphicon glyphicon-minus"></span>Clear Completed Tasks</li>
+</ul>
+<div id="task-wrap">
+    <div class="new-task" ng-show="toggle.display">
+        <textarea></textarea>
+        <span class="glyphicon glyphicon-plus"></span>
+    </div>
+    <ul class="task-list">
+        <li ng-repeat="task in tasks" class="done-{{ task.done }}">
+            <span class="glyphicon glyphicon-ok"></span>
+            {{ task.text }}
+            <span class="glyphicon glyphicon-remove"></span>
+        </li>
+    </ul>
+</div>

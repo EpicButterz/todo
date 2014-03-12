@@ -1,9 +1,109 @@
 .done-true {
     text-decoration: line-through;
     color: grey;
+    background-color: #bbb !important;
 }
-
 #wrapper{
     width: 300px;
     margin: 100px auto;
+}
+#home{
+    margin-bottom: 95px;
+}
+.title{
+    text-align:center;
+    margin-bottom: 20px;
+}
+.addNew:before{
+    font-size: 2em;
+}
+#home nav ul{
+    list-style: none;
+    clear:both;
+    padding: 0;
+}
+#home nav ul li{
+    float:left;
+    background-color: #eee;
+    width: 50%;
+    text-align: center;
+    padding: 20px 0;
+    color: #222;
+}
+#home nav ul li a{
+    text-decoration: none;
+    color: #222;
+}
+.active-tab{
+    background-color: #ddd !important;
+}
+#header-options{
+    clear:both;
+    list-style: none;
+    padding: 0 0 35px 0;
+    width: 303px;
+    display:block;
+    margin: 0 auto;
+}
+#header-options li{
+    float:left;
+    font-family: sans-serif;
+}
+#header-options :first-child{
+    margin: 0 50px 0 0;
+}
+#header-options .glyphicon{
+    margin-right: 7px;
+}
+.task-list{
+    clear:both;
+    list-style:none;
+    padding:0;
+}
+.task-list li{
+    position: relative;
+    min-height: 50px;
+    background-color: #ddd;
+    margin-bottom: 2px;
+    padding: 16px 30px 16px 40px;
+}
+.task-list .glyphicon-ok{
+    padding: 0 15px 0 10px;
+    position: absolute;
+    left: 0;
+    top: 18px;
+}
+.task-list .glyphicon-repeat{
+    padding: 0 15px 0 10px;
+    position: absolute;
+    left: 0;
+    top: 18px;
+}
+.task-list .glyphicon-remove{
+    float:right;
+    padding: 0 10px 0 0;
+    position: absolute;
+    right: 0;
+    top: 18px;
+}
+.new-task{
+    position:relative;
+    background-color: #999;
+    min-height: 50px;
+    padding: 5px 0 0 5px;
+}
+.new-task textarea{
+    background-color: #fefefe;
+    width: 90%;
+    border: none;
+    height: 47px;
+    padding: 10px;
+    resize: none;
+}
+.new-task .glyphicon{
+    position:absolute;
+    right:0;
+    top: 17px;
+    font-size: 1.5em;
+    padding: 0 6px 0 0;
 }

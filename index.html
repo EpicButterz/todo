@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html ng-app="angApp">
 <head>
-    <title></title>
+    <title>Todo</title>
     <link href="content/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="content/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div>
-        <ul>
-            <li><a href="#home"> Home</a></li>
-            <li><a href="#html1"> HTML 1</a></li>
-            <li><a href="#html2"> HTML 2</a></li>
-            <li><a href="#html3"> HTML 3</a></li>
-            <li><a href="#html4"> HTML 4</a></li>
-        </ul>
-    </div>
+    <h1 class="title">Todo</h1>
     <div>
         <div ng-view></div>
     </div>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="scripts/angular.js"></script>
     <script src="scripts/angular-route.js"></script>
     <script src="app/app.js"></script>
     <script src="app/controllers/controllers.js"></script>
     <script src="app/services/factory.js"></script>
+    <script src="app/directives/directives.js"></script>
+    <script src="app/filters/filters.js"></script>
 </body>
 </html>

@@ -1,0 +1,8 @@
+<ng-include src="'app/partials/header.html'"></ng-include>
+<ul class="task-list">
+    <li ng-repeat="task in tasks | filter:{done: true}" class="done-{{ task.done }}">
+        <span class="glyphicon glyphicon-repeat"></span>
+        {{ task.text }}
+        <span class="glyphicon glyphicon-remove"></span>
+    </li>
+</ul>

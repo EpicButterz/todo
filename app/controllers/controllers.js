@@ -1,19 +1,56 @@
-app.controller('homeController', function($scope, factory) {
-    $scope.message = 'Welcome Home!'
+app.controller('currentController', function($scope) {
+    $scope.toggle = {
+        display: false
+    };
+    $scope.tasks = [
+        {
+            text: "some really important task",
+            done: false
+        },
+        {
+            text: "another really important task",
+            done: true
+        },
+        {
+            text: "yet another really important task",
+            done: false
+        }
+    ]
 });
 
-app.controller('html1Controller', function($scope) {
-    $scope.message = 'Why are you even here?'
+app.controller('archiveController', function($scope) {
+    $scope.tasks = [
+        {
+            text: "some really important task",
+            done: false
+        },
+        {
+            text: "another really important task",
+            done: true
+        },
+        {
+            text: "yet another really important task",
+            done: false
+        }
+    ]
 });
 
-app.controller('html2Controller', function($scope) {
-    $scope.message = 'you made it to html2! yipee for you!'
+app.controller('registerController', function($scope, taskService) {
+    console.log("you are at the registration page");
+    $scope.registerUser = function() {
+        var username = $scope.newUser.username;
+        var password = $scope.newUser.password;
+        console.log("User is " + username);
+        taskService.registerUser(username, password);
+    }
 });
 
-app.controller('html3Controller', function($scope) {
-    $scope.message = "Back so soon?"
-});
-
-app.controller('html4Controller', function($scope) {
-    $scope.message = 'you are finally back!'
+app.controller('navController', function($scope, $location) {
+    $scope.getClass = function(path) {
+        if ($location.path().substr(0, path.length) == path) {
+            return true
+        }else{
+            return false;
+        }
+    }
 });
