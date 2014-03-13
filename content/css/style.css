@@ -8,7 +8,6 @@
     margin: 100px auto;
 }
 #home{
-    margin-bottom: 95px;
 }
 .title{
     text-align:center;
@@ -40,7 +39,7 @@
 #header-options{
     clear:both;
     list-style: none;
-    padding: 0 0 35px 0;
+    padding: 15px 0 35px 0;
     width: 303px;
     display:block;
     margin: 0 auto;

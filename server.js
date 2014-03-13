@@ -49,7 +49,7 @@ io.sockets.on('connection', function (socket) {
 
     // Add user
     socket.on('register user', function(data) {
-        var newUser = new user({ 
+        var newUser = new user({
             username: data.username,
             password: data.password,
             tasks: {

@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed90a373-3f2f-453a-887b-48edca9691b5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/partials/current.html" />
-      <change type="DELETED" beforePath="C:\source\sandbox\todo\.idea\MEAN-SPA-bootstrap.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\source\sandbox\todo\.idea\runConfigurations\app_js.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\source\sandbox\todo\app\partials\home.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\source\sandbox\todo\app\partials\html1.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\source\sandbox\todo\app\partials\html2.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\source\sandbox\todo\app\partials\html3.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\source\sandbox\todo\app\partials\html4.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/controllers.js" afterPath="$PROJECT_DIR$/app/controllers/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/factory.js" afterPath="$PROJECT_DIR$/app/services/factory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/css/style.css" afterPath="$PROJECT_DIR$/content/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="todo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,6 +44,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/content/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="17" selection-start="667" selection-end="667" vertical-scroll-proportion="0.60627675" vertical-offset="272" max-vertical-offset="1921">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -77,10 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="33" selection-start="1333" selection-end="1333" vertical-scroll-proportion="0.48617733" vertical-offset="357" max-vertical-offset="1547">
+            <state line="51" column="32" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1547">
               <folding />
             </state>
           </provider>
@@ -104,21 +98,21 @@
         <option value="$PROJECT_DIR$/app/partials/current.html" />
         <option value="$PROJECT_DIR$/app/partials/archive.html" />
         <option value="$PROJECT_DIR$/app/partials/header.html" />
-        <option value="$PROJECT_DIR$/content/css/style.css" />
         <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/app/partials/register.html" />
         <option value="$PROJECT_DIR$/app/services/factory.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app/controllers/controllers.js" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/content/css/style.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1591" />
-    <option name="y" value="-121" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
     <option name="width" value="1618" />
-    <option name="height" value="1218" />
+    <option name="height" value="870" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -346,7 +340,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1591" y="-121" width="1618" height="1218" extended-state="6" />
+    <frame x="-9" y="-9" width="1618" height="870" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -453,13 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="6" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1938">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="18" selection-start="107" selection-end="107" vertical-scroll-proportion="0.04861773" vertical-offset="0" max-vertical-offset="1049">
@@ -504,7 +491,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="33" selection-start="1333" selection-end="1333" vertical-scroll-proportion="0.48617733" vertical-offset="357" max-vertical-offset="1547">
+        <state line="51" column="32" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="17" selection-start="667" selection-end="667" vertical-scroll-proportion="0.60627675" vertical-offset="272" max-vertical-offset="1921">
           <folding />
         </state>
       </provider>
