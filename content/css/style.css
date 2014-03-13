@@ -1,3 +1,6 @@
+.btn{
+    width: 100%;
+}
 .done-true {
     text-decoration: line-through;
     color: grey;
@@ -26,7 +29,7 @@
     background-color: #eee;
     width: 50%;
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 0;
     color: #222;
 }
 #home nav ul li a{
@@ -39,17 +42,14 @@
 #header-options{
     clear:both;
     list-style: none;
-    padding: 15px 0 35px 0;
-    width: 303px;
+    padding: 15px 0 25px 0;
     display:block;
-    margin: 0 auto;
 }
 #header-options li{
     float:left;
     font-family: sans-serif;
-}
-#header-options :first-child{
-    margin: 0 50px 0 0;
+    padding: 0 0 0 10px;
+    cursor: pointer;
 }
 #header-options .glyphicon{
     margin-right: 7px;
@@ -96,13 +96,19 @@
     width: 90%;
     border: none;
     height: 47px;
-    padding: 10px;
+    padding: 5px;
     resize: none;
 }
 .new-task .glyphicon{
     position:absolute;
     right:0;
-    top: 17px;
-    font-size: 1.5em;
+    top: 20px;
+    font-size: 1.2em;
     padding: 0 6px 0 0;
+}
+.auth-form input[type="text"]{
+    margin-bottom: 7px;
+}
+.auth-form{
+    margin: 0 10px 45px 10px;
 }

@@ -35,13 +35,16 @@ app.controller('archiveController', function($scope) {
     ]
 });
 
-app.controller('registerController', function($scope, taskService) {
-    console.log("you are at the registration page");
+app.controller('authenticateController', function($scope, $location, taskService) {
     $scope.registerUser = function() {
-        var username = $scope.newUser.username;
+        var firstName = $scope.newUser.firstName;
+        var lastName = $scope.newUser.lastName;
+        var userEmail = $scope.newUser.userEmail;
         var password = $scope.newUser.password;
-        console.log("User is " + username);
-        taskService.registerUser(username, password);
+        taskService.registerUser(firstName, lastName, userEmail, password);
+    }
+    $scope.route = function(path) {
+        $location.path(path);
     }
 });
 

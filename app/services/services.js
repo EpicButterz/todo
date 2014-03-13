@@ -23,11 +23,11 @@ app.factory('socket', function ($rootScope) {
 });
 
 app.service('taskService', function(socket) {
-    console.log("made it to the service!");
-    this.registerUser = function(username, password) {
-        console.log("u: " + username + "p: " + password);
+    this.registerUser = function(firstName, lastName, userEmail, password) {
         var newUser = {
-            username: username,
+            firstName: firstName,
+            lastName: lastName,
+            email: userEmail,
             password: password
         };
         socket.emit('register user', newUser);

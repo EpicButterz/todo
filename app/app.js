@@ -2,6 +2,11 @@ var app = angular.module('angApp', ['ngRoute']);
 
 app.config(function ($routeProvider) {
     $routeProvider
+        .when('/login',
+        {
+            controller: 'authenticateController',
+            templateUrl: 'app/partials/authenticate.html'
+        })
         .when('/current',
             {
                 controller: 'currentController',
@@ -12,10 +17,10 @@ app.config(function ($routeProvider) {
                 controller: 'archiveController',
                 templateUrl: 'app/partials/archive.html'
             })
-        .when('/register',
+        .when('/auth',
         {
-            controller: 'registerController',
-            templateUrl: 'app/partials/register.html'
+            controller: 'authenticateController',
+            templateUrl: 'app/partials/authenticate.html'
         })
         .otherwise({ redirectTo: '/current' });
 });
