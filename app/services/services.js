@@ -23,6 +23,7 @@ app.factory('socket', function ($rootScope) {
 });
 
 app.service('taskService', function(socket) {
+
     this.registerUser = function(firstName, lastName, userEmail, password) {
         var newUser = {
             firstName: firstName,

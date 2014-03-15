@@ -16,6 +16,9 @@ app.controller('currentController', function($scope) {
             done: false
         }
     ]
+
+
+
 });
 
 app.controller('archiveController', function($scope) {
@@ -35,14 +38,19 @@ app.controller('archiveController', function($scope) {
     ]
 });
 
-app.controller('authenticateController', function($scope, $location, taskService) {
+app.controller('authenticateController', function($scope, $location, $cookies, taskService, socket) {
     $scope.registerUser = function() {
         var firstName = $scope.newUser.firstName;
         var lastName = $scope.newUser.lastName;
         var userEmail = $scope.newUser.userEmail;
         var password = $scope.newUser.password;
         taskService.registerUser(firstName, lastName, userEmail, password);
-    }
+        socket.on('send user', function(data){
+            var userId = data[0]._id;
+            $cookies.user = userId;
+        });
+
+    };
     $scope.route = function(path) {
         $location.path(path);
     }

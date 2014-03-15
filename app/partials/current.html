@@ -2,6 +2,11 @@
 <ul id="header-options">
     <li toggle="toggle.display"><span class="glyphicon glyphicon-plus"></span>New Task</li>
 </ul>
+<li ng-repeat="user in users">
+    <input type="checkbox" ng-model="todo.done" ng-click="markTodo(todo)">
+    <span class="done-{{todo.done}}">{{user.text}}</span>
+    <span class="removeTodo glyphicon glyphicon-remove" ng-click="removeTodo(todo)"></span>
+</li>
 <div id="task-wrap">
     <div class="new-task" ng-show="toggle.display">
         <textarea></textarea>
