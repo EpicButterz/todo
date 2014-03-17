@@ -20,7 +20,13 @@ app.get('/', function (req, res) {
     res.sendfile(__dirname + '/index.html');
 });
 
-
+io.set('transports', [
+    'websocket'
+    , 'flashsocket'
+    , 'htmlfile'
+    , 'xhr-polling'
+    , 'jsonp-polling'
+]);
 
 /////////////////////////////////////////////////////////////////////////////
 ////                                Database                             ////

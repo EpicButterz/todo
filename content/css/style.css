@@ -61,6 +61,12 @@
     clear:both;
     list-style:none;
     padding:0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
 }
 .task-list li{
     position: relative;

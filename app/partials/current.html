@@ -12,11 +12,11 @@
         <textarea ng-model="taskText"></textarea>
         <span ng-click="addTask()" class="glyphicon glyphicon-plus"></span>
     </div>
-    <ul class="task-list">
+    <ol class="task-list" drag-list="{ axis: 'y' }">
         <li ng-repeat="task in tasks" class="done-{{ task.done }}">
             <span class="glyphicon glyphicon-ok"></span>
             {{ task.text }}
             <span class="glyphicon glyphicon-remove"></span>
         </li>
-    </ul>
+    </ol>
 </div>

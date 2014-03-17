@@ -15,3 +15,12 @@ app.directive('toggle', function() {
         }
     }
 });
+
+app.directive('dragList', function() {
+    return{
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            $(element).sortable(scope.$eval(attrs.dragList));
+        }
+    }
+});
