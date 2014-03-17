@@ -33,6 +33,14 @@ app.service('taskService', function(socket) {
         };
         socket.emit('register user', newUser);
     };
+    this.login = function(userEmail, password) {
+        console.log("made it to service " + userEmail + " " + password);
+        var user = {
+            email: userEmail,
+            password: password
+        };
+        socket.emit('login user', user);
+    };
 
     this.sendUserId = function(userId) {
         socket.emit('send user id', userId);
@@ -45,5 +53,5 @@ app.service('taskService', function(socket) {
             user: userId
         };
         socket.emit('add task', newTask);
-    }
+    };
 });

@@ -56,6 +56,7 @@
 }
 #header-options .glyphicon{
     margin-right: 7px;
+    color: #777;
 }
 .task-list{
     clear:both;
@@ -115,6 +116,7 @@
     top: 20px;
     font-size: 1.2em;
     padding: 0 6px 0 0;
+    color: white;
 }
 .auth-form input[type="text"]{
     margin-bottom: 7px;

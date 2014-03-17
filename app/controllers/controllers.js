@@ -47,6 +47,17 @@ app.controller('authenticateController', function($scope, $location, $cookies, t
         });
 
     };
+    $scope.login = function() {
+        var userEmail = $scope.user.userEmail;
+        var password = $scope.user.password;
+        taskService.login(userEmail, password);
+
+        socket.on('logged in', function(data) {
+            console.log(data._id);
+            $cookies.user = data[0]._id;
+        });
+    };
+
     $scope.route = function(path) {
         $location.path(path);
     }

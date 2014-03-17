@@ -62,6 +62,16 @@ MongoClient.connect('mongodb://127.0.0.1:27017/todo', function(err, db) {
             });
         });
 
+        // User Login
+        socket.on('login user', function(data) {
+            console.log('login server');
+            userCollection.find({ email: data.email, password: data.password }).toArray(function(err, docs) {
+                if(err) throw err;
+                console.log('found user! server');
+                socket.emit('logged in', docs);
+            });
+        });
+
         // Add Task
         socket.on('add task', function(data) {
             taskCollection.insert(

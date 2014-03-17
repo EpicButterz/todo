@@ -1,7 +1,7 @@
 
-<form ng-submit="loginUser()" class="auth-form">
+<form ng-submit="login()" class="auth-form">
     <h3>Login</h3>
-    <input ng-model="user.username" class="form-control" type="text" placeholder="Email Address"/>
+    <input ng-model="user.userEmail" class="form-control" type="text" placeholder="Email Address"/>
     <input ng-model="user.password" class="form-control" type="text" placeholder="Password"/>
     <button type="submit" class="btn btn-primary" ng-click="route('/current')">Submit</button>
 </form>
