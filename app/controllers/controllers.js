@@ -1,23 +1,19 @@
-app.controller('currentController', function($scope) {
+app.controller('currentController', function($scope, $cookies, taskService, socket) {
+    var userId = $cookies.user;
+
     $scope.toggle = {
         display: false
     };
-    $scope.tasks = [
-        {
-            text: "some really important task",
-            done: false
-        },
-        {
-            text: "another really important task",
-            done: true
-        },
-        {
-            text: "yet another really important task",
-            done: false
-        }
-    ]
-
-
+    socket.on('get tasks', function(data) {
+        $scope.tasks = data;
+    });
+    taskService.sendUserId(userId);
+    $scope.addTask = function() {
+        var taskText = $scope.taskText;
+        taskService.addTask(taskText, userId);
+        $scope.tasks.push({text:$scope.taskText});
+        $scope.taskText = " ";
+    };
 
 });
 

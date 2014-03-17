@@ -33,4 +33,17 @@ app.service('taskService', function(socket) {
         };
         socket.emit('register user', newUser);
     };
+
+    this.sendUserId = function(userId) {
+        socket.emit('send user id', userId);
+    };
+
+    this.addTask = function(taskText, userId) {
+        var newTask = {
+            text: taskText,
+            done: false,
+            user: userId
+        };
+        socket.emit('add task', newTask);
+    }
 });

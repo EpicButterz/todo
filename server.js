@@ -33,6 +33,16 @@ MongoClient.connect('mongodb://127.0.0.1:27017/todo', function(err, db) {
     var taskCollection = db.collection('tasks');
 
     io.sockets.on('connection', function (socket) {
+
+        // send tasks
+        socket.on('send user id', function(userId) {
+            taskCollection.find({ user: userId }).toArray(function(err, docs){
+                    if(err) throw err;
+                    socket.emit('get tasks', docs);
+                }
+            );
+        });
+
         // Add user
         socket.on('register user', function(data) {
             userCollection.insert({
@@ -48,50 +58,19 @@ MongoClient.connect('mongodb://127.0.0.1:27017/todo', function(err, db) {
 
         // Add Task
         socket.on('add task', function(data) {
-            taskCollection.update(
-                { _id: ObjectId("53231ec55d52734419fd1441") },
-                {$set: {text: "Yet another task", done: true}},
-                function(err){
+            taskCollection.insert(
+                {
+                    user: data.user,
+                    text: data.text,
+                    done: data.done
+                },
+                function(err) {
                     if(err) throw err;
-                    var id = ObjectId().toString();
-                    console.log(id);
-            });
+                }
+            );
         });
+
+
+
     });
-
 });
-
-//
-//mongoose.connect('mongodb://localhost/todo', function (err) {
-//    if (err) {
-//        console.log(err);
-//    } else {
-//        console.log('Connected to mongodb!');
-//    }
-//});
-//
-//// Create Schema
-//var userSchema = mongoose.Schema({
-//    firstName: String,
-//    lastName: String,
-//    email: String,
-//    password: String
-//},
-//    { strict: false }
-//);
-//
-//var user = mongoose.model('users', userSchema);
-//
-//io.sockets.on('connection', function (socket) {
-//
-//    // Add user
-//    socket.on('register user', function(data) {
-//        var newUser = new user({
-//            firstName: data.firstName,
-//            lastName: data.lastName,
-//            email: data.email,
-//            password: data.password
-//        });
-//        newUser.save();
-//    });
-//});

@@ -9,8 +9,8 @@
 </li>
 <div id="task-wrap">
     <div class="new-task" ng-show="toggle.display">
-        <textarea></textarea>
-        <span class="glyphicon glyphicon-plus"></span>
+        <textarea ng-model="taskText"></textarea>
+        <span ng-click="addTask()" class="glyphicon glyphicon-plus"></span>
     </div>
     <ul class="task-list">
         <li ng-repeat="task in tasks" class="done-{{ task.done }}">
