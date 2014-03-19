@@ -5,7 +5,9 @@ var express = require('express'),
     io = require('socket.io').listen(server),
     MongoClient = require('mongodb').MongoClient,
     ObjectId = require('mongodb').ObjectID,
-    format = require('util').format;
+    format = require('util').format,
+    server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
 // Static Assets
 app.use('/app/', express.static(path.join(__dirname, '/app')));
@@ -13,7 +15,9 @@ app.use('/content/', express.static(path.join(__dirname, '/content')));
 app.use('/scripts/', express.static(path.join(__dirname, '/scripts')));
 
 // Create Server
-server.listen(3000);
+server.listen(server_port, server_ip_address, function() {
+    console.log( "Listening on " + server_ip_address + ", server_port " + server_port );
+});
 
 // Route to index
 app.get('/', function (req, res) {
@@ -32,7 +36,18 @@ io.set('transports', [
 ////                                Database                             ////
 /////////////////////////////////////////////////////////////////////////////
 
-MongoClient.connect('mongodb://127.0.0.1:27017/todo', function(err, db) {
+// default to a 'localhost' configuration:
+var connection_string = '127.0.0.1:27017/todo';
+// if OPENSHIFT env variables are present, use the available connection info:
+if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
+    connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+        process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+        process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+        process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+        process.env.OPENSHIFT_APP_NAME;
+}
+
+MongoClient.connect('mongodb://' + connection_string, function(err, db) {
     if(err) throw err;
     console.log("connected to mongodb!");
     var userCollection = db.collection('users');
