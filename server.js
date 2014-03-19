@@ -7,8 +7,7 @@ var express = require('express'),
     ObjectId = require('mongodb').ObjectID,
     format = require('util').format,
     server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080,
-    server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
-    socket = io.connect("http://http://todo-butterz.rhcloud.com:8000");
+    server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
 // Static Assets
 app.use('/app/', express.static(path.join(__dirname, '/app')));
