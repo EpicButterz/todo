@@ -1,4 +1,30 @@
+app.controller('indexController', function($scope, $cookies, $route){
+    console.log('you are at the index!');
+    $scope.userId = $cookies.user;
+
+    $scope.$watch(
+        function() {
+            return $cookies.user
+        },
+        function(newValue) {
+            $scope.userId = newValue;
+            if($scope.userId){
+                $scope.userStatus = true;
+            }else{
+                $scope.userStatus = false;
+            }
+        }
+    );
+
+
+    $scope.logout = function(){
+        delete $cookies.user;
+        window.location.assign("/");
+    };
+});
+
 app.controller('currentController', function($scope, $cookies, taskService, socket) {
+    console.log('you are at current!');
     var userId = $cookies.user;
 
     $scope.toggle = {
@@ -15,9 +41,11 @@ app.controller('currentController', function($scope, $cookies, taskService, sock
         $scope.taskText = " ";
     };
 
+
 });
 
 app.controller('archiveController', function($scope) {
+    console.log('you are at the archive!');
     $scope.tasks = [
         {
             text: "some really important task",
@@ -34,7 +62,8 @@ app.controller('archiveController', function($scope) {
     ]
 });
 
-app.controller('authenticateController', function($scope, $location, $cookies, taskService, socket) {
+app.controller('authenticateController', function($scope, $location, $cookies, $route, taskService, socket) {
+    console.log('you are at the auth page!');
     $scope.registerUser = function() {
         var firstName = $scope.newUser.firstName;
         var lastName = $scope.newUser.lastName;
@@ -45,15 +74,15 @@ app.controller('authenticateController', function($scope, $location, $cookies, t
             var userId = data[0]._id;
             $cookies.user = userId;
         });
-
     };
     $scope.login = function() {
+        console.log("login function");
         var userEmail = $scope.user.userEmail;
         var password = $scope.user.password;
         taskService.login(userEmail, password);
 
         socket.on('logged in', function(data) {
-            console.log(data._id);
+            console.log(data[0]._id);
             $cookies.user = data[0]._id;
         });
     };

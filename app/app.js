@@ -22,5 +22,5 @@ app.config(function ($routeProvider) {
             controller: 'authenticateController',
             templateUrl: 'app/partials/authenticate.html'
         })
-        .otherwise({ redirectTo: '/current' });
+        .otherwise({ redirectTo: '/auth' });
 });

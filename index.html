@@ -5,7 +5,11 @@
     <link href="content/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="content/css/style.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body ng-controller="indexController">
+<div ng-switch="userStatus">
+    <div ng-switch-when="false"><a href="#auth">Login</a></div>
+    <div ng-switch-when="true" ng-click="logout()">Logout</div>
+</div>
     <h1 class="title">Todo</h1>
     <div>
         <div ng-view></div>
